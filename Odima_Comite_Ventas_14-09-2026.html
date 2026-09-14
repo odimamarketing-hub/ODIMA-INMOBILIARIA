@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Odima Inmobiliaria · Comité Comercial Semanal · Corte 14/09/2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --bg:#0F0D0A; --card:#1A1611; --border:#241F17; --border2:#4A3F2E;
+    --text:#F4F1EA; --muted:#8A8276; --muted2:#6B6358; --muted3:#564D3F;
+    --seika:#C9905F; --hana:#8FAEAB; --eiko:#7B9BD4;
+    --ok:#7FB069; --warn:#D4A85F; --bad:#C97A6B;
+  }
+  *{box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',Arial,sans-serif;margin:0;padding:0;}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 26px 60px;}
+  .header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:20px;flex-wrap:wrap;gap:12px;}
+  .header h1{font-size:22px;margin:0 0 6px;font-weight:800;}
+  .header .sub{color:var(--muted);font-size:13px;}
+  .badge{background:#C9905F22;color:var(--seika);border:1px solid #C9905F55;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:700;white-space:nowrap;height:fit-content;}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:22px;border-bottom:1px solid var(--border);padding-bottom:12px;}
+  .tab-btn{background:transparent;border:1px solid var(--border2);color:var(--muted);padding:8px 18px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;}
+  .tab-btn.active{background:#C9905F25;border-color:var(--seika);color:var(--seika);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+  h2.section{font-size:14px;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted);margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+  h2.section:first-child{margin-top:0;}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  @media(max-width:800px){.grid3{grid-template-columns:1fr;}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;}
+  .proj-card{border-top:3px solid;}
+  .proj-name{font-size:16px;font-weight:800;margin-bottom:2px;}
+  .proj-sub{font-size:11px;color:var(--muted2);margin-bottom:14px;}
+  .kpi-row{display:flex;justify-content:space-between;margin-bottom:9px;font-size:13px;}
+  .kpi-row .lbl{color:var(--muted);}
+  .kpi-row .val{font-weight:700;font-family:monospace;font-size:14px;}
+  .flag{border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;}
+  .flag-bad{background:#C97A6B18;color:var(--bad);}
+  .flag-warn{background:#D4A85F18;color:var(--warn);}
+  .flag-ok{background:#7FB06918;color:var(--ok);}
+  table{width:100%;border-collapse:collapse;font-size:13px;}
+  th{text-align:left;color:var(--muted);font-size:11px;text-transform:uppercase;padding:8px 10px;border-bottom:2px solid var(--border2);}
+  td{padding:8px 10px;border-bottom:1px solid var(--border);font-family:monospace;}
+  td.name{font-family:inherit;}
+  tr:last-child td{border-bottom:none;}
+  .alert-banner{background:#C97A6B15;border:1px solid #C97A6B44;border-radius:10px;padding:16px 20px;margin-bottom:22px;}
+  .alert-banner b{color:var(--bad);}
+  .ok-banner{background:#7FB06915;border:1px solid #7FB06944;border-radius:10px;padding:16px 20px;margin-bottom:22px;}
+  .ok-banner b{color:var(--ok);}
+  .metatag{font-size:11px;color:var(--muted3);margin-top:6px;line-height:1.5;}
+  ul.reco{padding-left:20px;margin:0;}
+  ul.reco li{margin-bottom:10px;font-size:13.5px;line-height:1.5;}
+  ul.reco b{color:var(--text);}
+  .footer{border-top:1px solid var(--border);margin-top:40px;padding-top:14px;display:flex;justify-content:space-between;font-size:11px;color:var(--muted3);flex-wrap:wrap;gap:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div>
+      <h1>🏢 Odima Inmobiliaria · Comité Comercial Semanal</h1>
+      <div class="sub">SEIKA · HANA · EIKO &nbsp;·&nbsp; Sperant + Meta Ads Manager</div>
+    </div>
+    <span class="badge">Corte: Lun 7 – Dom 13 Sep 2026</span>
+  </div>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('resumen',this)">Resumen</button>
+    <button class="tab-btn" onclick="showTab('leads',this)">Leads</button>
+    <button class="tab-btn" onclick="showTab('meta',this)">Meta Ads</button>
+    <button class="tab-btn" onclick="showTab('visitas',this)">Visitas</button>
+    <button class="tab-btn" onclick="showTab('ventas',this)">Stock &amp; Ventas</button>
+  </div>
+
+  <div id="tab-resumen" class="tab-content active">
+
+    <div class="ok-banner">
+      <b>✅ Buena noticia del mes:</b> EIKO firmó 2 minutas más (Margarita Jáuregui 202, Juan Terrones 201) y SEIKA sumó una nueva (Mariano/Gabriela, dpto 401) — septiembre ya lleva S/2,405,000 en minutas firmadas, con EIKO en su mejor racha del año (17 minutas firmadas, stock casi agotado).
+    </div>
+
+    <h2 class="section">Resumen por proyecto · Semana 7-13 Sep</h2>
+    <div class="grid3">
+      <div class="card proj-card" style="border-top-color:var(--seika)">
+        <div class="proj-name" style="color:var(--seika)">SEIKA</div>
+        <div class="proj-sub">14 minutas firmadas · 0 separaciones en proceso</div>
+        <div class="kpi-row"><span class="lbl">Leads (semana)</span><span class="val">21</span></div>
+        <div class="kpi-row"><span class="lbl">Desistidos</span><span class="val flag flag-bad">47.6%</span></div>
+        <div class="kpi-row"><span class="lbl">Resp. promedio</span><span class="val flag flag-warn">3.0h</span></div>
+        <div class="kpi-row"><span class="lbl">Meta Ads (semana)</span><span class="val">38 leads · $6.11 CPL</span></div>
+        <div class="kpi-row"><span class="lbl">Visitas (semana)</span><span class="val flag flag-bad">0</span></div>
+      </div>
+      <div class="card proj-card" style="border-top-color:var(--hana)">
+        <div class="proj-name" style="color:var(--hana)">HANA</div>
+        <div class="proj-sub">Sin contratos en seguimiento este corte</div>
+        <div class="kpi-row"><span class="lbl">Leads (semana)</span><span class="val">24</span></div>
+        <div class="kpi-row"><span class="lbl">Desistidos</span><span class="val flag flag-ok">33.3%</span></div>
+        <div class="kpi-row"><span class="lbl">Resp. promedio</span><span class="val flag flag-bad">6.0h</span></div>
+        <div class="kpi-row"><span class="lbl">Meta Ads (semana)</span><span class="val">39 leads · $3.94 CPL</span></div>
+        <div class="kpi-row"><span class="lbl">Visitas (semana)</span><span class="val flag flag-ok">2</span></div>
+      </div>
+      <div class="card proj-card" style="border-top-color:var(--eiko)">
+        <div class="proj-name" style="color:var(--eiko)">EIKO</div>
+        <div class="proj-sub">17 minutas firmadas · 0 separaciones en proceso</div>
+        <div class="kpi-row"><span class="lbl">Leads (semana)</span><span class="val">28</span></div>
+        <div class="kpi-row"><span class="lbl">Desistidos</span><span class="val flag flag-ok">39.3%</span></div>
+        <div class="kpi-row"><span class="lbl">Resp. promedio</span><span class="val flag flag-warn">4.0h</span></div>
+        <div class="kpi-row"><span class="lbl">Meta Ads (semana)</span><span class="val">43 leads · $5.31 CPL</span></div>
+        <div class="kpi-row"><span class="lbl">Visitas (semana)</span><span class="val flag flag-bad">0</span></div>
+      </div>
+    </div>
+    <div class="metatag">Benchmark referencia: resp &lt;2h laboral · desistidos &lt;40%. Fuente: exports Leads Detallados Sperant, deduplicados.</div>
+
+    <h2 class="section">Análisis ejecutivo</h2>
+    <div class="card">
+      <ul class="reco">
+        <li><b>Septiembre es el mejor mes del año para EIKO:</b> firmó las 2 minutas que tenía en separación (Margarita Jáuregui y Juan Terrones), quedando con 17 minutas firmadas y prácticamente sin stock disponible — vale la pena que el comité revise el ritmo de reposición de unidades.</li>
+        <li><b>SEIKA también sumó una minuta nueva</b> (Mariano Velasco/Gabriela Quintanilla, dpto 401, S/815,000) — 14 minutas firmadas en total.</li>
+        <li><b>HANA tuvo el mejor desistimiento de la semana (33.3%)</b> pero su tiempo de respuesta subió a 6h — vale la pena revisar carga del asesor.</li>
+        <li><b>Confirmamos que la sincronización Meta↔Sperant es prácticamente del 100%</b> (no ~60% como se pensaba) — era un tema de qué campo de fecha se usaba para comparar, no leads perdidos.</li>
+        <li><b>HANA es la marca más eficiente en Meta Ads esta semana</b> ($3.94 CPL, la más barata de las 3), con "Ad1-Agosto2026" como el anuncio que más aporta.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="tab-leads" class="tab-content">
+    <h2 class="section">Leads Sperant · Semana 7-13 Sep 2026</h2>
+    <table>
+      <tr><th>Proyecto</th><th>Leads</th><th>Desistidos</th><th>Resp. promedio</th></tr>
+      <tr><td class="name" style="color:var(--seika);font-weight:700">SEIKA</td><td>21</td><td style="color:var(--bad)">10 (47.6%)</td><td style="color:var(--warn)">3.0h</td></tr>
+      <tr><td class="name" style="color:var(--hana);font-weight:700">HANA</td><td>24</td><td style="color:var(--ok)">8 (33.3%)</td><td style="color:var(--bad)">6.0h</td></tr>
+      <tr><td class="name" style="color:var(--eiko);font-weight:700">EIKO</td><td>28</td><td style="color:var(--ok)">11 (39.3%)</td><td style="color:var(--warn)">4.0h</td></tr>
+    </table>
+
+    <h2 class="section">Leads con interacción Meta esta semana: ¿nuevos o reactivados?</h2>
+    <table>
+      <tr><th>Proyecto</th><th>Total interacción</th><th>Nuevos</th><th>Reactivados</th><th>Reactivados: segmento</th></tr>
+      <tr><td class="name" style="color:var(--eiko);font-weight:700">EIKO</td><td>43</td><td style="color:var(--ok)">28 (65%)</td><td style="color:var(--warn)">15 (35%)</td><td>Desestimados 7 · Contactado 8</td></tr>
+      <tr><td class="name" style="color:var(--seika);font-weight:700">SEIKA</td><td>38</td><td style="color:var(--ok)">20 (53%)</td><td style="color:var(--warn)">18 (47%)</td><td>Desestimados 13 · Contactado 5</td></tr>
+      <tr><td class="name" style="color:var(--hana);font-weight:700">HANA</td><td>38</td><td style="color:var(--ok)">24 (63%)</td><td style="color:var(--warn)">14 (37%)</td><td>Desestimados 11 · Contactado 3</td></tr>
+    </table>
+    <div class="metatag">SEIKA y HANA tienen casi la mitad de sus "interacciones Meta" de la semana viniendo de leads reactivados (mayormente desistidos recontactados), no demanda nueva. Cruce F. Creación × F. Última Interacción Digital, corte 14/09/2026.</div>
+  </div>
+
+  <div id="tab-meta" class="tab-content">
+    <h2 class="section">Meta Ads Manager (pantallazos por anuncio) · Semana 7-13 Sep</h2>
+    <table>
+      <tr><th>Proyecto</th><th>Leads</th><th>Gasto (USD)</th><th>Costo/lead</th></tr>
+      <tr><td class="name" style="color:var(--eiko);font-weight:700">EIKO</td><td>43</td><td>$228.29</td><td style="color:var(--warn)">$5.31</td></tr>
+      <tr><td class="name" style="color:var(--seika);font-weight:700">SEIKA</td><td>38</td><td>$232.17</td><td style="color:var(--bad)">$6.11</td></tr>
+      <tr><td class="name" style="color:var(--hana);font-weight:700">HANA</td><td>39</td><td>$153.74</td><td style="color:var(--ok)">$3.94</td></tr>
+      <tr style="border-top:2px solid var(--border2)"><td class="name" style="font-weight:800">Total</td><td style="font-weight:800">120</td><td style="font-weight:800">$614.20</td><td>—</td></tr>
+    </table>
+
+    <h2 class="section">Sincronización Meta → Sperant (verificada)</h2>
+    <table>
+      <tr><th>Proyecto</th><th>Meta</th><th>Sperant (F. Últ. Interacción Digital)</th><th>Sincronización</th></tr>
+      <tr><td class="name" style="color:var(--eiko);font-weight:700">EIKO</td><td>43</td><td>43</td><td style="color:var(--ok)">100%</td></tr>
+      <tr><td class="name" style="color:var(--seika);font-weight:700">SEIKA</td><td>38</td><td>38</td><td style="color:var(--ok)">100%</td></tr>
+      <tr><td class="name" style="color:var(--hana);font-weight:700">HANA</td><td>39</td><td>38</td><td style="color:var(--ok)">97%</td></tr>
+    </table>
+    <div class="metatag">Confirmado el 14/09/2026: usando el campo correcto de Sperant ("F. Última Interacción Digital"), la sincronización real es prácticamente del 100% — no hay leads perdidos entre Meta y Sperant.</div>
+
+    <h2 class="section">Qué anuncio performa</h2>
+    <div class="card">
+      <ul class="reco">
+        <li><b>EIKO</b> — "Ad3-Agosto" es prácticamente todo el resultado (39 de 43 leads, $5.37 CPL).</li>
+        <li><b>SEIKA</b> — "AD2-Agosto26" es el motor (26 leads, $5.07 CPL). Los creativos nuevos de septiembre están más caros ($7.58-$11.30 CPL), normal en fase de aprendizaje.</li>
+        <li><b>HANA</b> — "Ad1-Agosto2026" el motor (19 leads, $3.65 CPL); "Ad1-Septiembre2026" el más barato de las 3 marcas ($1.72 CPL, aunque con poco volumen aún).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="tab-visitas" class="tab-content">
+    <h2 class="section">Visitas verificadas por período</h2>
+    <table>
+      <tr><th>Proyecto</th><th>Semana (7-13 Sep)</th><th>Mes (Set, a la fecha)</th><th>Trimestre (90 días)</th></tr>
+      <tr><td class="name" style="color:var(--seika);font-weight:700">SEIKA</td><td style="color:var(--bad)">0</td><td>1</td><td>27</td></tr>
+      <tr><td class="name" style="color:var(--hana);font-weight:700">HANA</td><td style="color:var(--ok)">2</td><td>2</td><td>22</td></tr>
+      <tr><td class="name" style="color:var(--eiko);font-weight:700">EIKO</td><td style="color:var(--bad)">0</td><td>0</td><td>50</td></tr>
+    </table>
+    <div class="metatag">2 visitas confirmadas en HANA esta semana (Hoover Torres 08/09, Jessica De Torres 13/09). Fuente: export "Actividades de Visita" de Sperant, filtrado por tipo de interacción "visita al proyecto"/"visita a feria"/"visita a oficinas".</div>
+  </div>
+
+  <div id="tab-ventas" class="tab-content">
+    <h2 class="section">Contratos por proyecto</h2>
+    <div class="grid3">
+      <div class="card">
+        <div style="font-size:13px;font-weight:800;color:var(--seika);margin-bottom:10px;">SEIKA</div>
+        <div class="kpi-row"><span class="lbl">Minutas firmadas</span><span class="val flag flag-ok">14</span></div>
+        <div class="kpi-row"><span class="lbl">Separaciones en proceso</span><span class="val">0</span></div>
+        <div class="metatag">Última minuta: Estuardo Mariano/Gabriela Quintanilla, dpto 401 + estac. 20, S/815,000, firmada 12.09.26.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:13px;font-weight:800;color:var(--hana);margin-bottom:10px;">HANA</div>
+        <div class="kpi-row"><span class="lbl">Sin cambios este corte</span><span class="val">—</span></div>
+        <div class="metatag">No se recibió Excel de ventas actualizado para HANA en este corte.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:13px;font-weight:800;color:var(--eiko);margin-bottom:10px;">EIKO</div>
+        <div class="kpi-row"><span class="lbl">Minutas firmadas</span><span class="val flag flag-ok">17</span></div>
+        <div class="kpi-row"><span class="lbl">Separaciones en proceso</span><span class="val">0</span></div>
+        <div class="metatag">Últimas 2 minutas: Margarita Jáuregui (202) 04.09.26 · Juan Victor Terrones (201) 10.09.26.</div>
+      </div>
+    </div>
+
+    <h2 class="section">Movimiento de contratos este mes (septiembre)</h2>
+    <table>
+      <tr><th>Comprador</th><th>Proyecto / Dpto</th><th>Total</th><th>Movimiento</th></tr>
+      <tr><td class="name">Margarita Jáuregui Montero</td><td>EIKO 202</td><td>S/795,000</td><td style="color:var(--ok)">Firmó minuta 04.09.26</td></tr>
+      <tr><td class="name">Juan Victor Terrones Escobar</td><td>EIKO 201</td><td>S/795,000</td><td style="color:var(--ok)">Firmó minuta 10.09.26</td></tr>
+      <tr><td class="name">Estuardo Mariano / Gabriela Quintanilla</td><td>SEIKA 401</td><td>S/815,000</td><td style="color:var(--ok)">Firmó minuta 12.09.26</td></tr>
+    </table>
+
+    <h2 class="section">Ritmo de ventas 2026 (montos de minutas firmadas)</h2>
+    <table>
+      <tr><th>Proyecto</th><th>Total 2026 (a la fecha)</th></tr>
+      <tr><td class="name" style="color:var(--seika);font-weight:700">SEIKA</td><td>S/5,834,965</td></tr>
+      <tr><td class="name" style="color:var(--hana);font-weight:700">HANA</td><td>S/0</td></tr>
+      <tr><td class="name" style="color:var(--eiko);font-weight:700">EIKO</td><td>S/13,077,183</td></tr>
+      <tr style="border-top:2px solid var(--border2)"><td class="name" style="font-weight:800">ODIMA total</td><td style="font-weight:800">S/18,912,148</td></tr>
+    </table>
+    <div class="metatag">Septiembre 2026 lleva S/2,405,000 en minutas firmadas (3 unidades) — el mejor arranque de mes del año.</div>
+  </div>
+
+  <div class="footer">
+    <span>Odima Inmobiliaria · Comité Comercial Semanal · SEIKA · HANA · EIKO</span>
+    <span>Sperant + Meta Ads Manager · Corte: 14/09/2026 (semana 7-13 Sep)</span>
+  </div>
+
+</div>
+
+<script>
+function showTab(id, btn) {
+  var contents = document.querySelectorAll('.tab-content');
+  for (var i = 0; i < contents.length; i++) contents[i].classList.remove('active');
+  document.getElementById('tab-' + id).classList.add('active');
+  var btns = document.querySelectorAll('.tab-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
